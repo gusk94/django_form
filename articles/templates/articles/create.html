@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create article
+{% endblock title %}
+
+{% block body %}
+<h1>Make new Article</h1><hr>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Create</button>
+</form>
+<form action="{% url 'articles:index' %}">
+  {% csrf_token %}
+  <button type="submit">Back</button>
+</form>
+{% endblock body %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Article
+{% endblock title %}
+
+{% block body %}
+<h1>{{ article.title }}</h1>
+<p>{{ article.created_at }}</p>
+<hr>
+<p>{{ article.content }}</p>
+<hr>
+<form action="{% url 'articles:index' %}">
+  {% csrf_token %}
+  <button type="submit">Back</button>
+</form>
+{% endblock body %}
